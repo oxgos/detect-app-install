@@ -1,7 +1,7 @@
 export default function detectApp(openUrl, downloadUrl, checkTime=2500) {
   return new Promise((resolve, reject) => {
     const browser = BrowserInfo()
-    document.addEventListener('visibilityChange', function() {
+    document.addEventListener('visibilitychange', function() {
       console.log(isPageHidden())
       if (isPageHidden()) {
         resolve()
@@ -16,10 +16,10 @@ export default function detectApp(openUrl, downloadUrl, checkTime=2500) {
     if (browser.isAndroid) {
       const iframe = document.createElement('iframe')
       iframe.src = openUrl
-      iframe.style.display = none
+      iframe.style.display = 'none'
       document.body.appendChild(iframe)
-      setTimeout(() => {
-        document.body.romoveChild(iframe)
+      setTimeout(function() {
+        document.body.removeChild(iframe)
       }, 2000)
     } else if (browser.isIos) {
       window.location.href = openUrl
