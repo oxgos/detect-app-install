@@ -4,8 +4,12 @@
   "description": "web page detect if app installed",
   "main": "index.js",
   "scripts": {
-    "build": "rollup -c"
+    "build": "rm -rf ./dist && rollup -c"
   },
+  "bugs": {
+    "url": "https://github.com/oxgos/detect-app-install/issues"
+  },
+  "homepage": "https://github.com/oxgos/detect-app-install",
   "keywords": [
     "ios",
     "android",

@@ -9,7 +9,7 @@ export default {
   input: 'src/index.js',
   output: {
     name: 'detectAppInstall', // 挂载到window里的变量名称
-    file: 'dist/detectAppInstall.js',
+    file: 'dist/detectAppInstall.min.js',
     format: 'umd'
   },
   plugins: [
