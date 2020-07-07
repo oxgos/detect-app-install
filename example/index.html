@@ -1,18 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>detect-app-install</title>
 </head>
+
 <body>
   <div id="content"></div>
   <script src="../dist/detectAppInstall.min.js"></script>
   <script>
     let openUrl = 'ado://com.xxx.beegrid',
-        downloadUrl = 'https://download.html',
-        checkTime = 2500
-    window.onload = function() {
+      downloadUrl = 'https://download.html',
+      checkTime = 2500
+    window.onload = function () {
+      /*
+       * @params{String} openUrl Ios/Android: schema URL
+       * PS: IOS用schema URL会默认弹出确认提示框，若想取消，IOS可尝试用Universal Link(但作者没测试)
+       * @params{String} downUrl 想跳转的下载地址
+       * @params{Number} checkTime 等待时间，若超过时间，自动打开downloadUrl, 默认2500ms
+       */
       detectAppInstall(openUrl, downloadUrl, checkTime)
         .then(() => {
           document.getElementById('content').innerHTML = '已安装'
@@ -23,4 +31,5 @@
     }
   </script>
 </body>
+
 </html>
