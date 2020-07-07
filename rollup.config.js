@@ -8,7 +8,7 @@ const production = !process.env.ROLLUP_WATCH;
 export default {
   input: 'src/index.js',
   output: {
-    name: 'detectAppInstall',
+    name: 'detectAppInstall', // 挂载到window里的变量名称
     file: 'dist/detectAppInstall.js',
     format: 'umd'
   },

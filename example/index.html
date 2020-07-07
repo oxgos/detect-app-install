@@ -13,7 +13,7 @@
         downloadUrl = 'https://download.html',
         checkTime = 2500
     window.onload = function() {
-      detectApp(openUrl, downloadUrl, checkTime)
+      detectAppInstall(openUrl, downloadUrl, checkTime)
         .then(() => {
           document.getElementById('content').innerHTML = '已安装'
         })
